@@ -35,5 +35,11 @@
     <ClInclude Include="clsDynamicArray.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="clsQueueArr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="clsStackArr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

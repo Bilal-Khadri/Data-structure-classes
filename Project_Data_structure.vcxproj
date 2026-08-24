@@ -130,6 +130,8 @@
     <ClInclude Include="clsMyDblLinkedList.h" />
     <ClInclude Include="clsMyQueue.h" />
     <ClInclude Include="clsMyStack.h" />
+    <ClInclude Include="clsQueueArr.h" />
+    <ClInclude Include="clsStackArr.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

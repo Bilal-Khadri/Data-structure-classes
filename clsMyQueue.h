@@ -7,14 +7,14 @@ using namespace std;
 
 
 
-template <class T> 
+template <class T>
 
 class clsMyQueue
 {
 
-protected: 
+protected:
 
-	//composition concept :
+	//composition concept : from class : clsMyDblLinkedList
 	clsMyDblLinkedList <T>MyList;
 
 public:
@@ -31,7 +31,7 @@ public:
 	}
 
 	T back() {
-		
+
 		return MyList.GetItem(size() - 1);
 	}
 
@@ -68,11 +68,11 @@ public:
 	}
 
 	//Insert after by index :
-	void InsertAfter(int index,T value) {
-		MyList.InsertAfter(index,value);
+	void IsertAfter(int index, T value) {
+		MyList.InsertAfter(index, value);
 	}
 
-	void InsertAtFront(T value) {
+	void IsertAtFront(T value) {
 		MyList.InsertAtBeginning(value);
 	}
 
@@ -80,8 +80,7 @@ public:
 		MyList.InsertAtEnd(value);
 	}
 
-	void clear() {
+	void Clear() {
 		MyList.Clear();
 	}
 };
-

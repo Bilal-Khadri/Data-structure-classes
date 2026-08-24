@@ -35,8 +35,8 @@ public:
 
     bool SetItem(int index, T Value)
     {
-
-        if (index >= _Size || _Size < 0)
+        
+        if (index >= _Size || index < 0)
         {
             return false;
         }
@@ -60,6 +60,10 @@ public:
     void PrintList()
 
     {
+        if (IsEmpty()) {
+            cout << "The list is empty ! \n";
+            return;
+        }
 
         for (int i = 0; i <= _Size - 1; i++)
         {
@@ -205,11 +209,10 @@ public:
             OriginalArray[i] = OriginalArray[i - 1];
         }
         OriginalArray[index] = value;
+
     }
 
     void InserAtBeginning(T value) {
-
-      //  Resize(_Size + 1);
 
         InsertAt(0, value);
     }
@@ -233,9 +236,10 @@ public:
     
     void InsertAtEnd(T value) {
 
-        //Resize(_Size + 1);
-
-        OriginalArray[_Size - 1] = value;
+    
+            Resize(_Size + 1);
+            OriginalArray[_Size - 1] = value;
+      
 
     }
 
