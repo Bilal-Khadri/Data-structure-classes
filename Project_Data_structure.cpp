@@ -8,7 +8,7 @@ int main()
 {
 
 	clsDynamicArray<int> Arr(4);
-
+	cout << "Array items : \n";
 	Arr.SetItem(0, 123);
 	Arr.SetItem(1, 2);
 	Arr.SetItem(2, 3);
@@ -49,10 +49,48 @@ int main()
 	Arr.DeleteFirstItem();
 	Arr.PrintList();*/
 
-	cout << "\nAfter delete last item : \n";
+	/*cout << "\nAfter delete last item : \n";
 	Arr.DeleteLastItem();
 	Arr.PrintList();
-	cout << "\nArray size = " << Arr.Size() << endl;
+	cout << "Array size = " << Arr.Size() << endl;*/
+
+	//int index = Arr.Find(3);
+	//cout << "\nIs item found or not : ";
+	//if (index == -1)cout << "Not found \n";
+	//else cout << "Yes Found . at index " << index << endl;
+
+	//cout << "\nArray items after deleting item 3 : \n";
+	//Arr.DeleteItem(3);
+	//Arr.PrintList();
+	//cout << "Array size = " << Arr.Size() << endl;
+
+	cout << "\nArray items after inserting value after index 1 : \n";
+	Arr.InsertAt(1,111);
+	Arr.PrintList();
+	cout << "Array size = " << Arr.Size() << endl;
+
+	cout << "\nAfter inserting item at beginning :  \n";
+	Arr.InserAtBeginning(343);
+	Arr.InserAtBeginning(99);
+	Arr.PrintList();
+	cout << "Array size = " << Arr.Size() << endl;
+
+	cout << "\nAfter inserting item before index 2 :  \n";
+	Arr.InsertBefore(2,999);
+	Arr.PrintList();
+	cout << "Array size = " << Arr.Size() << endl;
+
+	cout << "\ninserting item after index 2 :  \n";
+	Arr.InsertAfter(2, 999);
+	Arr.PrintList();
+	cout << "Array size = " << Arr.Size() << endl;
+
+	cout << "\ninserting item after index 2 :  \n";
+	Arr.InsertAtEnd(1000);
+	Arr.PrintList();
+	cout << "Array size = " << Arr.Size() << endl;
+
+
 
 }
 

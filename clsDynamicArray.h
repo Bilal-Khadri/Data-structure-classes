@@ -154,7 +154,7 @@ public:
         //deleting by moving all item to left 
         //then resize the array : size -1 
 
-        if (index < 0 || index >= _Size)return 0;
+        if (index < 0 || index >= _Size)return false;
 
         //here we did _Size -1 in the loop :
         //because we will access the last element anyway by i + 1 at last iteration 
@@ -162,7 +162,7 @@ public:
                 OriginalArray[i] = OriginalArray[i + 1];
         }
         Resize(_Size - 1);
-        return 1;
+        return true;
     }
 
     void DeleteFirstItem() {
@@ -173,8 +173,73 @@ public:
         DeleteItemAt(_Size - 1);
     }
 
+    int Find(T value) {
+
+        for (int i = 0; i < _Size; i++) {
+            if (OriginalArray[i] == value)
+                return i;
+        }
+        return -1;
+
+    }
+
+    bool DeleteItem(T value) {
+
+        int index = Find(value);
+
+        if (index == -1)
+            return false;
+
+        DeleteItemAt(index);
+        return true;
+    }
+
+    void InsertAt(int index, T value) {
+
+        if (index < 0 || index >= _Size)return;
+
+        Resize(_Size + 1);
+
+        for (int i = _Size - 1; i >= index; i--)
+        {
+            OriginalArray[i] = OriginalArray[i - 1];
+        }
+        OriginalArray[index] = value;
+    }
+
+    void InserAtBeginning(T value) {
+
+      //  Resize(_Size + 1);
+
+        InsertAt(0, value);
+    }
+
+    void InsertBefore(int index, T value) {
+
+        if (index < 1)
+            InsertAt(0, value);
+        else
+            InsertAt(index, value);
+    }
+
+    void InsertAfter(int index, T value) {
+
+        if (index >= _Size)
+            InsertAt(_Size - 1, value);
+        else
+            InsertAt(index + 1, value);
+
+    }
+    
+    void InsertAtEnd(T value) {
+
+        //Resize(_Size + 1);
+
+        OriginalArray[_Size - 1] = value;
+
+    }
 
 
 
-};
+    };
 
